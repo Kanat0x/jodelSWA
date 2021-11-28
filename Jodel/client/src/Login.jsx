@@ -126,9 +126,9 @@ class Login extends React.Component {
 				</FormControl>
 
 
-				<div class="alert">
+				<div id="loginFailedMessage">
                   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                  {this.state.passwordBool ? "pw falsch": "asddsaasdsdaasd"}
+                  {this.state.passwordBool ? "Benutzername oder Passwort ist falsch!": ""}
                 </div>
 
 
