@@ -10,6 +10,7 @@
 package de.hse.swa.jodel.orm.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +27,8 @@ import javax.persistence.SequenceGenerator;
  */
 @Entity
 public class Post implements Serializable {
-	
+
+
 	private static final long serialVersionUID = 1L;
 
     @Id
@@ -36,5 +38,56 @@ public class Post implements Serializable {
     @Column(name = "ID")
     private Long id;
 
+    @Column(name = "user")
+    private String user;
 
+    @Column(name = "postText")
+    private String postText;
+
+    @Column(name = "postDate")
+    private Date postDate;
+
+
+    public Post() {
+    }
+
+    public Post(String postText, String user, Date postDate) {
+        this.postText = postText;
+        this.user = user;
+        this.postDate = new Date();
+    }
+
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String postText() {
+        return postText;
+    }
+
+    public void setPostText(String postText) {
+        this.postText = postText;
+    }
+
+    public Date getPostDate() {
+        return postDate;
+    }
+
+    public void setPostDate(Date postDate) {
+        this.postDate = postDate;
+    }
+    
 }
