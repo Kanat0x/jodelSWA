@@ -49,6 +49,7 @@ class Login extends React.Component {
 			username: '',
 			showPassword: false,
 			loginButtonDisabled: true,
+			passwordBool: false,
 		};		
 	}
 	
@@ -83,7 +84,10 @@ class Login extends React.Component {
 		let tid = data.id;
 		if ( tid !== 0 ) {
 			this.props.authorized();
-		}
+		}else {
+         			this.setState({passwordBool: true });
+         		}
+
     }
 
 	handleLoginSubmit = ( event ) => {
@@ -120,6 +124,14 @@ class Login extends React.Component {
 					onChange={this.handleChange}
 					/>
 				</FormControl>
+
+
+				<div class="alert">
+                  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                  {this.state.passwordBool ? "pw falsch": "asddsaasdsdaasd"}
+                </div>
+
+
 				<FormControl className={clsx(classes.margin, classes.textField)}>
 					<InputLabel htmlFor="password">Password</InputLabel>
 					<Input id="password"
