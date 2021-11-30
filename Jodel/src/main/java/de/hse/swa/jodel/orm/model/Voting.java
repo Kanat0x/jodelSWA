@@ -33,6 +33,31 @@ public class Voting implements Serializable {
 	
 	@Column(name = "VALUE")
 	private int value;
-	
+
+	@Column(name = "postId")
+	private Long postId;
+
+	@Column(name = "user")
+	private String user;
+
+	public Voting() {
+	}
+
+	public Voting(int value) {
+		this.value = value;
+	}
+
+	public Long getpostId() {return postId;}
+
+	public int getValue() {return value;}
+
+	public void setValue(int value) {this.value = value;}
+
+	public String getUser() {return user;}
+
+	public void setUser(String user) {this.user = user;}
+
+
+
 
 }
