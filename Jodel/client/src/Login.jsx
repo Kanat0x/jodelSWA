@@ -84,9 +84,10 @@ class Login extends React.Component {
 		let tid = data.id;
 		if ( tid !== 0 ) {
 			this.props.authorized();
-		}else {
-         			this.setState({passwordBool: true });
-         		}
+		}else
+		{
+         	this.setState({passwordBool: true });
+        }
 
     }
 
@@ -127,7 +128,6 @@ class Login extends React.Component {
 
 
 				<div id="loginFailedMessage">
-                  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                   {this.state.passwordBool ? "Benutzername oder Passwort ist falsch!": ""}
                 </div>
 
