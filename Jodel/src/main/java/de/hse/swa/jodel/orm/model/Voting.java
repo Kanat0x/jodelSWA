@@ -47,7 +47,7 @@ public class Voting implements Serializable {
 
 	public Long getpostId() {return postId;}
 
-	public Long setpostId() {this.postId = postId;}
+	public void setpostId() {this.postId = postId; }
 
 	public int getValue() {return value;}
 
