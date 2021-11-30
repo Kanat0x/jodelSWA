@@ -126,10 +126,10 @@ class Login extends React.Component {
 					/>
 				</FormControl>
 
-
-				<div id="loginFailedMessage">
-                  {this.state.passwordBool ? "Benutzername oder Passwort ist falsch!": ""}
-                </div>
+                <font
+                    className={classes.passwordBool} face="Arial" color="red">
+                    {this.state.passwordBool ? "Benutzername oder Passwort ist falsch!": ""}
+                </font>
 
 
 				<FormControl className={clsx(classes.margin, classes.textField)}>
