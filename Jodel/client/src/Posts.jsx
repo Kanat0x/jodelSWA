@@ -9,7 +9,7 @@ const styles = theme => ({
 		justifyContent: 'center',
 		alignItems: 'center',
 		minHeight: 'calc(100vh - 40px)',
-		border: '5px solid red',
+		border: '5px solid orange',
 		padding: '10px',
 	}
 });

@@ -7,7 +7,7 @@ import PostForm from './PostForm';
 const styles = theme => ({
 	center: {
 		display: 'block',
-		border: '5px solid green',
+		border: '5px solid gray',
 		padding: '10px',
 	}
 });
