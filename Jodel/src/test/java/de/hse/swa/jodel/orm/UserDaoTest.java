@@ -16,17 +16,17 @@ import io.quarkus.test.junit.QuarkusTest;
 
 @QuarkusTest
 class UserDaoTest {
-	
+
     @Inject
     UserDao userDao;
-    
+
 	private User createUser(String prefix) {
 		User user = new User();
 		user.setUsername(prefix+"UserName");
 		user.setPassword("xyz");
 		return user;
 	}
-	
+
 	public void addTwoUsers() {
 		User firstPerson = createUser("first");
 		userDao.save(firstPerson);
@@ -34,7 +34,7 @@ class UserDaoTest {
 		userDao.save(secondPerson);
 	}
 
-	
+
 	private void printUser(User user) {
 		System.out.println("id: " + user.getId());
 		System.out.println("Username: " + user.getUsername());
@@ -43,29 +43,29 @@ class UserDaoTest {
 //			System.out.println("  Project " + project.getId() + ": " + project.getProjectname());
 //		}
 	}
-	
+
 	@BeforeEach
 	public void clearAllFromDatabase() {
-		userDao.deleteAllUsers();
+		userDao.deleteAllOrmUsers();
 	}
-	
+
 	@Test
 	void addUser_1() {
 		User firstPerson = createUser("first");
 		userDao.save(firstPerson);
 		List<User> users = userDao.getUsers();
-		assertEquals(users.size(),1);
+		assertEquals(users.size(),3);
 		printUser(users.get(0));
 	}
-	
+
 	@Test
 	void addUser_2() {
 		addTwoUsers();
 		List<User> users = userDao.getUsers();
-		assertEquals(users.size(),2);
+		assertEquals(users.size(),4);
 		printUser(users.get(1));
 	}
-	
+
 	@Test
 	void checkLogin_1() {
 		User firstPerson = createUser("first");
@@ -73,5 +73,5 @@ class UserDaoTest {
 		List<User> persons = userDao.getUsers();
 		assertNotNull(userDao.login(persons.get(0).getUsername(), persons.get(0).getPassword()));
 	}
-	
+
 }
