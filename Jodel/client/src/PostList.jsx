@@ -6,7 +6,7 @@ import Post from './Post'
 const styles = theme => ({
 	center: {
 		display: 'block',
-		border: '5px solid blue',
+		border: '5px solid gray',
 		padding: '10px',
 	}
 });

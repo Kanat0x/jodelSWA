@@ -29,11 +29,11 @@ public class UserDao {
     EntityManager em;
 
 	private static final Logger LOGGER = Logger.getLogger(UserDao.class);
-	
+
 	public User getUser(Long id) {
 		return em.find(User.class, id);
 	}
-	
+
 	public User login(String username, String password) {
 		try {
 			LOGGER.debug("Checking for user name and password");
@@ -50,7 +50,7 @@ public class UserDao {
 	}
 
 	public List<User> getUsers() {
-		Query q = em.createQuery("select c from Tuser c");
+		Query q = em.createQuery("select c from User c");
 		List<User> users = q.getResultList();
 		return users;
 	}
@@ -64,7 +64,7 @@ public class UserDao {
     	}
     	return user;
     }
-	
+
 
 	@Transactional
 	public void deleteUser(Long id) {
@@ -74,12 +74,12 @@ public class UserDao {
 			em.remove(cm);
 		}
 	}
-	
+
     @Transactional
     public void deleteAllUsers() {
     	try {
 
-    	    Query del = em.createQuery("DELETE FROM Tuser WHERE id >= 0");
+    	    Query del = em.createQuery("DELETE FROM User WHERE id >= 0");
     	    del.executeUpdate();
 
     	} catch (SecurityException | IllegalStateException  e) {
@@ -88,12 +88,12 @@ public class UserDao {
 
     	return;
     }
-    
+
     @Transactional
     public void deleteAllOrmUsers() {
     	try {
 
-    	    Query del = em.createQuery("DELETE FROM Tuser WHERE id >= 10");
+    	    Query del = em.createQuery("DELETE FROM User WHERE id >= 10");
     	    del.executeUpdate();
 
     	} catch (SecurityException | IllegalStateException  e) {
