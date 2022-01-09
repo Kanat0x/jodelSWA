@@ -24,28 +24,28 @@ import javax.persistence.Table;
 
 /**
  * The persistent class for the TUSER database table.
- * 
+ *
  */
 @Entity
 @Table(name = "Tuser")
 public class User implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
-	
-    @Id
-    @SequenceGenerator(name = "tuserSeq", sequenceName = "ZSEQ_TUSER_ID", allocationSize = 1, initialValue = 10)
-    @GeneratedValue(generator = "tuserSeq")
-    
-    @Column(name = "ID")
-    private Long id;
 
-    @Basic(optional=false)
-    @Column(name = "username", length=64, unique = true)
-    private String username;
-    
-    @Basic(optional=true)
-    @Column(name = "password", length=64)
-    private String password;
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@SequenceGenerator(name = "tuserSeq", sequenceName = "ZSEQ_TUSER_ID", allocationSize = 1, initialValue = 10)
+	@GeneratedValue(generator = "tuserSeq")
+
+	@Column(name = "id")
+	private Long id;
+
+	@Basic(optional=false)
+	@Column(name = "username", length=64, unique = true)
+	private String username;
+
+	@Basic(optional=true)
+	@Column(name = "password", length=64)
+	private String password;
 
 	public User() {
 	}
@@ -54,7 +54,7 @@ public class User implements Serializable {
 		this.username = name;
 	}
 
-	
+
 	public Long getId() {
 		return this.id;
 	}
@@ -71,7 +71,7 @@ public class User implements Serializable {
 	public void setUsername(String name) {
 		this.username = name;
 	}
-	
+
 
 	public String getPassword() {
 		return this.password;
@@ -81,5 +81,5 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	
+
 }

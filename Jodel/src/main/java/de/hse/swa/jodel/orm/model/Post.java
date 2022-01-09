@@ -1,69 +1,54 @@
-/*========================================================================*
- *                                                                        *
- * This software is governed by the GPL version 2.                        *
- *                                                                        *
- * Copyright: Joerg Friedrich, University of Applied Sciences Esslingen   *
- *                                                                        *
- * $Id:$
- *                                                                        *
- *========================================================================*/
 package de.hse.swa.jodel.orm.model;
 
-import java.io.Serializable;
 import java.util.Date;
-
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-// import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
-/**
- * The persistent class for the POST database table.
- * 
- */
 @Entity
-public class Post implements Serializable {
-
-
-	private static final long serialVersionUID = 1L;
+@Table(name = "Post")
+public class Post {
 
     @Id
     @SequenceGenerator(name = "postSeq", sequenceName = "ZSEQ_POST_ID", allocationSize = 1, initialValue = 10)
     @GeneratedValue(generator = "postSeq")
-    
-    @Column(name = "ID")
+
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "user")
-    private String user;
+    @Column(name = "text")
+    private String text;
 
-    @Column(name = "postText")
-    private String postText;
+    @Column(name = "longitude")
+    private Double longitude;
 
-    @Column(name = "postDate")
-    private Date postDate;
+    @Column(name = "latitude")
+    private Double latitude;
 
+    @Column(name = "postedat")
+    private Date postedat;
+
+    @Column(name = "authorId")
+    private Long authorId;
 
     public Post() {
     }
 
-    public Post(String postText, String user, Date postDate) {
-        this.postText = postText;
-        this.user = user;
-        this.postDate = new Date();
-    }
-
-
-    public String getUser() {
-        return this.user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
+    public Post(String text, double longitude, double latitude, Long userId) {
+        this.text =text;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.authorId = userId;
+        this.postedat = new Date();
     }
 
     public Long getId() {
@@ -74,20 +59,48 @@ public class Post implements Serializable {
         this.id = id;
     }
 
-    public String postText() {
-        return postText;
+    public String getText() {
+        return text;
     }
 
-    public void setPostText(String postText) {
-        this.postText = postText;
+    public void setText(String text) {
+        this.text = text;
     }
 
-    public Date getPostDate() {
-        return postDate;
+    public Double getLongitude() {
+        return longitude;
     }
 
-    public void setPostDate(Date postDate) {
-        this.postDate = postDate;
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
-    
-}
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Date getPostedat() {
+        return postedat;
+    }
+
+    public void setPostedat(Date postedat) {
+        this.postedat = postedat;
+    }
+
+    public Long getAuthorId() {
+        return this.authorId;
+    }
+
+    public void setAuthorId(Long authorId) {
+
+        this.authorId = authorId;
+
+
+
+    }
+
+}	 
