@@ -52,6 +52,7 @@ class PostDaoTest {
         postDao.save(post);
         return post;
     }
+
     //print post
     private void printPost(Post post) {
         System.out.println("id: " + post.getId());
@@ -62,14 +63,6 @@ class PostDaoTest {
         System.out.println("latitude: " + post.getLatitude());
     }
 
-/*    @BeforeEach
-    public void clearAllFromDatabase() {
-        postDao.deleteAllPosts();
-    }
-*/
-
-
-    // add post test
     @Test
     void addPostTest() {
 
