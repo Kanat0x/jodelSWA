@@ -63,14 +63,12 @@ class PostDaoTest {
         System.out.println("latitude: " + post.getLatitude());
     }
 
-
-    // add post test
     @Test
     void addPostTest() {
 
         // create test user and test post
-        User user = createUser("Halime");
-        Post post = createPost(user, "Test Post");
+        User user = createUser("Herbert");
+        Post post = createPost(user, "Marcel hat keine Katzenbabies!!!1!11!!!");
 
         List<Post> posts = postDao.getAllPosts();
         assertEquals(posts.size(), 5);

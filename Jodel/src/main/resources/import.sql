@@ -13,11 +13,12 @@ INSERT INTO Comment (id, latitude, longitude, postedat, text, authorId, postId)
 INSERT INTO Comment (id, latitude, longitude, postedat, text, authorId, postId)
        VALUES ("4", "123", "123", "2022.09.01", "2. Test Comment User 2", "2", "4");
 
+
 INSERT INTO Post (id, latitude, longitude, postedat, text, authorId)
-      VALUES ("1", "123", "123", "2022.09.01", "Das ist ein Post", "1");
+      VALUES ("1", "24", "25345", "2020.09.09", "Das ist ein Post", "1");
 INSERT INTO Post (id, latitude, longitude, postedat, text, authorId)
-      VALUES ("2", "123", "123", "2022.09.01", "Und das ist der zweite Post", "2");
+      VALUES ("2", "32265", "2324", "2020.09.09", "Und das ist der zweite Post", "2");
 INSERT INTO Post (id, latitude, longitude, postedat, text, authorId)
-      VALUES ("3", "123", "123", "2020.09.01", "Ich habe keine lust mehr", "1");
+      VALUES ("3", "24", "25345", "2020.09.09", "Ich habe keine lust mehr", "1");
 INSERT INTO Post (id, latitude, longitude, postedat, text, authorId)
-      VALUES ("4", "123", "123", "2020.09.01", "Das ist eaber schönes wetter", "2");
+      VALUES ("4", "32265", "2324", "2020.09.09", "Das ist eaber schönes wetter", "2");
