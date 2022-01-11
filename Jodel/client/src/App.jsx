@@ -10,6 +10,7 @@ const styles = theme => ({
 		justifyContent: 'center',
 		alignItems: 'center',
 		minHeight: '100vh',
+
 	},
 });
 
@@ -19,19 +20,23 @@ class App extends React.Component {
 
 	constructor(props) {
 		super(props);
-	    this.state = {	  
+	    this.state = {
+			currentUser: [],
 			loggedIn: false,
 		};
 	}
 
-	authorized = () => {
+	authorized = (User) => {
+		this.setState({currentUser: User})
 		this.setState({loggedIn: true});
 	}
-  
+
 	render() {
-		if (this.state.loggedIn) {
+		if (this.state.loggedIn && this.state.currentUser !== undefined) {
 			return (
-			<Posts url={theUrl} ></Posts> 
+				console.log(this.state.loggedIn),
+				console.log( "Benutzer wurde übergeben:" + this.state.currentUser.username),
+			<Posts currentUser={this.state.currentUser} url={theUrl} ></Posts>
 			);
 		} else {
 			return (
