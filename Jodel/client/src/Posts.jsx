@@ -15,7 +15,7 @@ const styles = theme => ({
 
 		padding: "2%",
 		boxSizing: "borderBox",
-		background: "#FF6666",
+		background: "#FFFFFF",
 		fontfamily: "cursive",
 		marginTop: "2%",
 	},
@@ -32,7 +32,7 @@ const styles = theme => ({
 			width: "86%",
 			padding: "2%",
 			boxSizing: "borderBox",
-			background: "#FF6666",
+			background: "#FFFFFF",
 			marginTop: "2%",
 		},
     	textField: {

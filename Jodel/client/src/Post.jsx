@@ -10,30 +10,32 @@ const styles = theme => ({
 		width: "96%",
 		padding: "2%",
 		boxSizing: "borderBox",
-		background: "#FFFFCC",
+		background: "#85BB5E",
 		border: "double",
 		marginTop: "2%",
+		fontSize: "150%",
 	},
 
 	postForm: {
 		marginLeft: "0%",
-		width: "50%",
+		width: "95%",
 		padding: "2%",
 		boxSizing: "borderBox",
-		background: "#FFFFCC ",
-		marginTop: "2%",
+		background: "#B5E196",
+		marginTop: "0%",
 		fontFamily: "cursive",
 		color: "black",
+		fontSize: "35%",
 	},
 
 	textForm: {
-		marginLeft: "5%",
-		width: "80%",
+		marginLeft: "0%",
+		width: "95%",
 		padding: "2%",
 		boxSizing: "borderBox",
-		background: "#CC6666",
+		background: "#B5E196",
 		//border: "double",
-		marginTop: "0%",
+		marginTop: "2%",
 		fontFamily: "cursive",
 		color: "black",
 	},
@@ -68,19 +70,22 @@ render() {
 
             <font >
 
-				<div className={classes.postForm}>
-					{this.state.author.username} schieb am {this.state.post.postedat.slice(0,10).replace("-",".").replace("-",".") } um {this.state.post.postedat.slice(11,16)}
-
-				</div>
-
 				<div className={classes.textForm}>
-					{this.state.post.text}
+                					{this.state.post.text}
+                </div>
+
+
+
+				<div className={classes.postForm}>
+					Post von {this.state.author.username} am {this.state.post.postedat.slice(0,10).replace("-",".").replace("-",".") } um {this.state.post.postedat.slice(11,16)}
 				</div>
+
+
 
 			</font>
-
-			<Comments currentUser={this.state.currentUser} comments={this.state.comments} post={this.state.post}></Comments>
             <PostForm post = {this.state.post} currentUser={this.state.currentUser}></PostForm>
+			<Comments currentUser={this.state.currentUser} comments={this.state.comments} post={this.state.post}></Comments>
+
 	    </div>
 		);
 	}

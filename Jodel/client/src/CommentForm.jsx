@@ -7,21 +7,22 @@ const styles = theme => ({
 
 
 	kommentar: {
-		marginLeft: "10%",
+		marginLeft: "0%",
 		width: "85%",
 		padding: "2%",
 		boxSizing: "borderBox",
-		background: "#F4BB44",
+		background: "#85BB5E",
 		marginTop: "0%",
 		fontFamily: "cursive",
 		color: "black",
+		fontSize: "40%",
 	},
 
 	kommentar2: {
 		width: "94%",
 		padding: "3%",
 		boxSizing: "borderBox",
-		background: "#F4BB44",
+		background: "#B5E196",
 		marginTop: "1%",
 	},
 	button:{
@@ -51,8 +52,6 @@ class CommentForm extends React.Component {
 		<div className={classes.kommentar}>
 			{this.state.comment.text}
 		</div>
-
-
 
 		);
 	}

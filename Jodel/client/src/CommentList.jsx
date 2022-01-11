@@ -36,4 +36,3 @@ class CommentList extends React.Component {
 }
 
 export default withStyles(styles)(CommentList);
-

@@ -11,7 +11,7 @@ const styles = theme => ({
 		padding: "2%",
 		boxSizing: "borderBox",
 		bordertop: "double",
-		background: "#F0F0F0",
+		background: "#B5E196",
 		marginTop: "2%",
 		fontFamily: "cursive",
 	},
@@ -20,6 +20,7 @@ const styles = theme => ({
 		fontWeight: "500",
 		fontSize: "120%",
 		align: "center",
+		fontSize: "65%",
 	},
 });
 
@@ -59,8 +60,7 @@ componentDidMount()
 				Kommentare:
 			</div>
 			{this.state.comments.map((comment, index) => (
-
-				<Comment currentUser={this.state.currentUser} comment={comment}></Comment>
+			<Comment currentUser={this.state.currentUser} comment={comment}></Comment>
 
 			))}
 

@@ -25,17 +25,18 @@ const styles = theme => ({
 		width: "85%",
 		padding: "2%",
 		boxSizing: "borderBox",
-		background: "#F0F0F0",
+		background: "#85BB5E",
 		fontFamily: "cursive",
 		fontSize: "10px",
 		color: "black",
+		fontSize: "35%",
 	},
 
-	autor: {
+	author: {
 		width: "96%",
 		padding: "2%",
 		boxSizing: "borderBox",
-		background: "#FF9933",
+		background: "#85BB5E",
 		marginTop: "2%",
 	},
 });
@@ -117,11 +118,15 @@ class Comment extends React.Component {
 		<div className={classes.autor}>
 			<div>
 
-				<div className={classes.authorForm}>
-				{this.state.author.username} am {this.state.comment.postedat.slice(0,10).replace("-",".").replace("-",".") } um {this.state.comment.postedat.slice(11,16)}
-				</div>
+
 
 				<CommentForm currentUser={this.state.user} comment = {this.state.comment}></CommentForm>
+				<div className={classes.authorForm}>
+                	 {this.state.author.username} am {this.state.comment.postedat.slice(0,10).replace("-",".").replace("-",".") } um {this.state.comment.postedat.slice(11,16)}
+                </div>
+
+
+
 			</div>
 
 
@@ -130,7 +135,9 @@ class Comment extends React.Component {
 
 					{this.state.like.length} likes
 				</Button>
-				<Button variant="contained" color="primary" onClick={() => this.downvote()}>
+				<Button
+
+				variant="contained" color="secondary" onClick={() => this.downvote()}>
 
 					{this.state.dislike.length} dislikes
 				</Button>

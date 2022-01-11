@@ -9,7 +9,7 @@ const styles = theme => ({
 		width: "90%",
 		padding: "0%",
 		boxSizing: "borderBox",
-		background: "#CC6666 ",
+		background: "#FFFFFF",
 
 }
 });
