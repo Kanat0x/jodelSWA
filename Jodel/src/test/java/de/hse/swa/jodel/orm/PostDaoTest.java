@@ -67,8 +67,8 @@ class PostDaoTest {
     void addPostTest() {
 
         // create test user and test post
-        User user = createUser("Herbert");
-        Post post = createPost(user, "Marcel hat keine Katzenbabies!!!1!11!!!");
+        User user = createUser("Emre");
+        Post post = createPost(user, "Test");
 
         List<Post> posts = postDao.getAllPosts();
         assertEquals(posts.size(), 5);

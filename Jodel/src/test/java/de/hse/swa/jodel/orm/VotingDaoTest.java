@@ -42,7 +42,7 @@ class VotingDaoTest {
     private User createUser(String prefix) {
         User user = new User();
         user.setUsername(prefix);
-        user.setPassword("xyz");
+        user.setPassword("12345");
 
         userDao.save(user);
 
@@ -82,7 +82,7 @@ class VotingDaoTest {
     //voting creation
     private Voting createUpvote(String voterName, String commentText ) {
 
-        Voting voting = votingDao.upvote(createUser(voterName).getId(), createComment(commentText, "Ben", "Man ist das ein Wetter", "Leon").getId());
+        Voting voting = votingDao.upvote(createUser(voterName).getId(), createComment(commentText, "Emre", "Testpost", "Halime").getId());
 
         votingDao.save(voting);
 
@@ -92,7 +92,7 @@ class VotingDaoTest {
 
     private Voting createDownvote(String voterName, String commentText ) {
 
-        Voting voting = votingDao.downvote(createUser(voterName).getId(), createComment(commentText, "Sabine", "Geil ey", "Fisch").getId());
+        Voting voting = votingDao.downvote(createUser(voterName).getId(), createComment(commentText, "Halime", "Test", "Das ist ein Post").getId());
 
         votingDao.save(voting);
 

@@ -23,14 +23,14 @@ class UserDaoTest {
 	private User createUser(String prefix) {
 		User user = new User();
 		user.setUsername(prefix+"UserName");
-		user.setPassword("xyz");
+		user.setPassword("12345");
 		return user;
 	}
 
 	public void addTwoUsers() {
-		User firstPerson = createUser("first");
+		User firstPerson = createUser("user1");
 		userDao.save(firstPerson);
-		User secondPerson = createUser("second");
+		User secondPerson = createUser("user2");
 		userDao.save(secondPerson);
 	}
 
@@ -51,7 +51,7 @@ class UserDaoTest {
 
 	@Test
 	void addUser_1() {
-		User firstPerson = createUser("first");
+		User firstPerson = createUser("user1");
 		userDao.save(firstPerson);
 		List<User> users = userDao.getUsers();
 		assertEquals(users.size(),3);
@@ -68,7 +68,7 @@ class UserDaoTest {
 
 	@Test
 	void checkLogin_1() {
-		User firstPerson = createUser("first");
+		User firstPerson = createUser("user2");
 		userDao.save(firstPerson);
 		List<User> persons = userDao.getUsers();
 		assertNotNull(userDao.login(persons.get(0).getUsername(), persons.get(0).getPassword()));
